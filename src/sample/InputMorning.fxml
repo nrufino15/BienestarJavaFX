@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <Accordion layoutX="164.0" layoutY="175.0" />
+      <AnchorPane layoutX="73.0" layoutY="94.0" prefHeight="61.0" prefWidth="269.0">
+         <children>
+            <Label layoutY="21.0" text="Estado de animo:" />
+            <ImageView fx:id="E1" fitHeight="32.0" fitWidth="32.0" layoutX="103.0" layoutY="14.0" onMouseClicked="#ratingBar" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/unselected-star.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="E2" fitHeight="32.0" fitWidth="32.0" layoutX="135.0" layoutY="14.0" onMouseClicked="#ratingBar" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/unselected-star.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="E3" fitHeight="32.0" fitWidth="32.0" layoutX="167.0" layoutY="14.0" onMouseClicked="#ratingBar" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/unselected-star.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="E4" fitHeight="32.0" fitWidth="32.0" layoutX="199.0" layoutY="14.0" onMouseClicked="#ratingBar" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/unselected-star.png." />
+               </image>
+            </ImageView>
+            <ImageView fx:id="E5" fitHeight="32.0" fitWidth="32.0" layoutX="231.0" layoutY="15.0" onMouseClicked="#ratingBar" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/unselected-star.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="73.0" layoutY="175.0" prefHeight="61.0" prefWidth="269.0">
+         <children>
+            <Label layoutY="21.0" text="Estado fisico:" />
+            <ImageView fx:id="F1" fitHeight="32.0" fitWidth="32.0" layoutX="95.0" layoutY="14.0" onMouseClicked="#ratingBar" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/unselected-star.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="F2" fitHeight="32.0" fitWidth="32.0" layoutX="127.0" layoutY="14.0" onMouseClicked="#ratingBar" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/unselected-star.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="F3" fitHeight="32.0" fitWidth="32.0" layoutX="159.0" layoutY="14.0" onMouseClicked="#ratingBar" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/unselected-star.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="F4" fitHeight="32.0" fitWidth="32.0" layoutX="191.0" layoutY="14.0" onMouseClicked="#ratingBar" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/unselected-star.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="F5" fitHeight="32.0" fitWidth="32.0" layoutX="223.0" layoutY="15.0" onMouseClicked="#ratingBar" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/unselected-star.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <Label layoutX="329.0" layoutY="33.0" text="Mañana" />
+      <Button layoutX="303.0" layoutY="397.0" mnemonicParsing="false" onAction="#ratingBar" text="Button" />
+   </children>
+</AnchorPane>
