@@ -1,58 +1,28 @@
-package sample;
+package sample.Controllers;
 
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.stage.Stage;
 
-import java.io.IOException;
+public class InputMornigController {
+    @FXML private ImageView E1, E2, E3, E4, E5, F1, F2, F3, F4, F5;
+    @FXML private Label P1, P2;
+    @FXML private ChoiceBox<String> choiceBox;
+    private ObservableList<String> foodList = FXCollections
+            .observableArrayList("Leche", "Cereales", "Pasta", "Fruta", "Vegetales", "Legumbres", "Agua", "Alcohol", "Sumos");
 
-public class Controller {
-
-    @FXML public ImageView E1, E2, E3, E4, E5, F1, F2, F3, F4, F5;
-    @FXML public Label P1, P2;
-
-    public void changeSceenHomePageToSelectInputPage(ActionEvent event) throws IOException {
-        Parent viewParent = FXMLLoader.load(getClass().getResource("SelectInputPage.fxml"));
-        Scene viewScene = new Scene(viewParent);
-
-        Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
-
-        window.setScene(viewScene);
-        window.show();
-    }
-
-    public void changeSceenSelectInputPageToHomePage(ActionEvent event) throws IOException {
-        Parent viewParent = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
-        Scene viewScene = new Scene(viewParent);
-
-        Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
-
-        window.setScene(viewScene);
-        window.show();
-    }
-
-    public void changeSceenSelectInputPageToInputMorning(ActionEvent event) throws IOException {
-        Parent viewParent = FXMLLoader.load(getClass().getResource("InputMorning.fxml"));
-        Scene viewScene = new Scene(viewParent);
-
-        Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
-
-        window.setScene(viewScene);
-        window.show();
+    @FXML
+    public void initialize(){
+        choiceBox.setValue("Leche");
+        choiceBox.setItems(foodList);
     }
 
     public void ratingBar() {
-
-        System.out.println("CLICKED");
 
         E1.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
             E1.setImage(new Image("sample/img/selected-star.png"));
