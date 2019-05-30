@@ -15,7 +15,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
-import java.io.IOException;
+import java.io.*;
+import java.util.ArrayList;
 
 public class InputMorningController {
     @FXML private ImageView E1, E2, E3, E4, E5, F1, F2, F3, F4, F5;
@@ -141,5 +142,23 @@ public class InputMorningController {
 
         window.setScene(viewScene);
         window.show();
+    }
+
+    public void guardarDatos() throws FileNotFoundException, IOException, ClassNotFoundException {
+        ArrayList<Datos> datos = new ArrayList<>();
+        datos.add(new Datos(P1.getText(), P2.getText(), choiceBox.getValue()));
+        datos.add(new Datos(P1.getText(), P1.getText(), choiceBox.getValue()));
+        datos.add(new Datos(P1.getText(), P1.getText(), choiceBox.getValue()));
+
+        FileOutputStream fout =new FileOutputStream("C:\\Users\\nicky\\Desktop\\output.txt");
+        ObjectOutputStream out= new ObjectOutputStream(fout);
+        out.writeObject(datos);
+        out.close();
+
+        //Muestra los datos en consola
+//        FileInputStream fin = new FileInputStream("C:\\Users\\nicky\\Desktop\\output.txt");
+//        ObjectInputStream ois = new ObjectInputStream(fin);
+//        ArrayList<Datos> datos2 = (ArrayList<Datos>)ois.readObject();
+//        for(Datos employee : datos2) System.out.println(employee);
     }
 }
