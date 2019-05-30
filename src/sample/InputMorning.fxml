@@ -70,5 +70,7 @@
       </AnchorPane>
       <Label layoutX="329.0" layoutY="33.0" text="Mañana" />
       <Button layoutX="303.0" layoutY="397.0" mnemonicParsing="false" onAction="#ratingBar" text="Button" />
+      <Label fx:id="P1" layoutX="351.0" layoutY="116.0" text="0" />
+      <Label fx:id="P2" layoutX="351.0" layoutY="197.0" text="0" />
    </children>
 </AnchorPane>
