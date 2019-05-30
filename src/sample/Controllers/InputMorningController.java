@@ -2,14 +2,22 @@ package sample.Controllers;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 
-public class InputMornigController {
+import java.io.IOException;
+
+public class InputMorningController {
     @FXML private ImageView E1, E2, E3, E4, E5, F1, F2, F3, F4, F5;
     @FXML private Label P1, P2;
     @FXML private ChoiceBox<String> choiceBox;
@@ -123,5 +131,15 @@ public class InputMornigController {
             P2.setText("5");
             event.consume();
         });
+    }
+
+    public void changeScreenInputMorningPageToSelectInputPage(ActionEvent event) throws IOException {
+        Parent viewParent = FXMLLoader.load(getClass().getResource("/sample/FXML/SelectInputPage.fxml"));
+        Scene viewScene = new Scene(viewParent);
+
+        Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
+
+        window.setScene(viewScene);
+        window.show();
     }
 }

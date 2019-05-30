@@ -9,20 +9,9 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class Controller {
+public class SelectInputController {
 
-
-    public void changeSceenHomePageToSelectInputPage(ActionEvent event) throws IOException {
-        Parent viewParent = FXMLLoader.load(getClass().getResource("/sample/FXML/SelectInputPage.fxml"));
-        Scene viewScene = new Scene(viewParent);
-
-        Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
-
-        window.setScene(viewScene);
-        window.show();
-    }
-
-    public void changeSceenSelectInputPageToHomePage(ActionEvent event) throws IOException {
+    public void changeScreenSelectInputPageToHomePage(ActionEvent event) throws IOException {
         Parent viewParent = FXMLLoader.load(getClass().getResource("/sample/FXML/HomePage.fxml"));
         Scene viewScene = new Scene(viewParent);
 
@@ -32,7 +21,7 @@ public class Controller {
         window.show();
     }
 
-    public void changeSceenSelectInputPageToInputMorning(ActionEvent event) throws IOException {
+    public void changeScreenSelectInputPageToInputMorningPage(ActionEvent event) throws IOException {
         Parent viewParent = FXMLLoader.load(getClass().getResource("/sample/FXML/InputMorning.fxml"));
         Scene viewScene = new Scene(viewParent);
 

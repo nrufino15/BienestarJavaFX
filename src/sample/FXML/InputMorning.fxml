@@ -5,10 +5,11 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.InputMornigController">
+<AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.InputMorningController">
    <children>
       <Accordion layoutX="164.0" layoutY="175.0" />
-      <AnchorPane layoutX="73.0" layoutY="94.0" prefHeight="61.0" prefWidth="269.0">
+      <Label layoutX="329.0" layoutY="33.0" text="Mañana" />
+      <AnchorPane layoutX="73.0" layoutY="145.0" prefHeight="61.0" prefWidth="269.0">
          <children>
             <Label layoutY="21.0" text="Estado de animo:" />
             <ImageView fx:id="E1" fitHeight="32.0" fitWidth="32.0" layoutX="103.0" layoutY="14.0" onMouseClicked="#ratingBar" pickOnBounds="true" preserveRatio="true">
@@ -28,7 +29,7 @@
             </ImageView>
             <ImageView fx:id="E4" fitHeight="32.0" fitWidth="32.0" layoutX="199.0" layoutY="14.0" onMouseClicked="#ratingBar" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@img/unselected-star.png." />
+                  <Image url="@../img/unselected-star.png" />
                </image>
             </ImageView>
             <ImageView fx:id="E5" fitHeight="32.0" fitWidth="32.0" layoutX="231.0" layoutY="15.0" onMouseClicked="#ratingBar" pickOnBounds="true" preserveRatio="true">
@@ -38,7 +39,8 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="73.0" layoutY="175.0" prefHeight="61.0" prefWidth="269.0">
+      <Label fx:id="P1" layoutX="351.0" layoutY="167.0" text="0" />
+      <AnchorPane layoutX="73.0" layoutY="226.0" prefHeight="61.0" prefWidth="269.0">
          <children>
             <Label layoutY="21.0" text="Estado fisico:" />
             <ImageView fx:id="F1" fitHeight="32.0" fitWidth="32.0" layoutX="95.0" layoutY="14.0" onMouseClicked="#ratingBar" pickOnBounds="true" preserveRatio="true">
@@ -68,15 +70,14 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <Label layoutX="329.0" layoutY="33.0" text="Mañana" />
-      <Button layoutX="303.0" layoutY="397.0" mnemonicParsing="false" onAction="#ratingBar" text="Button" />
-      <Label fx:id="P1" layoutX="351.0" layoutY="116.0" text="0" />
-      <Label fx:id="P2" layoutX="351.0" layoutY="197.0" text="0" />
-      <AnchorPane layoutX="73.0" layoutY="259.0" prefHeight="61.0" prefWidth="325.0">
+      <Label fx:id="P2" layoutX="351.0" layoutY="248.0" text="0" />
+      <AnchorPane layoutX="73.0" layoutY="310.0" prefHeight="61.0" prefWidth="325.0">
          <children>
             <Label layoutY="21.0" text="Tipo de comida consumida:" />
             <ChoiceBox fx:id="choiceBox" layoutX="163.0" layoutY="18.0" prefWidth="150.0" />
          </children>
       </AnchorPane>
+      <Button layoutX="300.0" layoutY="404.0" mnemonicParsing="false" onAction="#ratingBar" text="Guardar" />
+      <Button layoutX="73.0" layoutY="29.0" mnemonicParsing="false" onAction="#changeScreenInputMorningPageToSelectInputPage" text="Atras" />
    </children>
 </AnchorPane>
