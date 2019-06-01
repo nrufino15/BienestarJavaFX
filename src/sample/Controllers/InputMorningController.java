@@ -16,9 +16,12 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.*;
-import java.util.ArrayList;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.time.LocalDate;
 
-public class InputMorningController {
+
+public class    InputMorningController {
     @FXML private ImageView E1, E2, E3, E4, E5, F1, F2, F3, F4, F5;
     @FXML private Label P1, P2;
     @FXML private ChoiceBox<String> choiceBox;
@@ -144,21 +147,39 @@ public class InputMorningController {
         window.show();
     }
 
-    public void guardarDatos() throws FileNotFoundException, IOException, ClassNotFoundException {
-        ArrayList<Datos> datos = new ArrayList<>();
-        datos.add(new Datos(P1.getText(), P2.getText(), choiceBox.getValue()));
-        datos.add(new Datos(P1.getText(), P1.getText(), choiceBox.getValue()));
-        datos.add(new Datos(P1.getText(), P1.getText(), choiceBox.getValue()));
+    public void saveData() {
+        Path currentRelativePath = Paths.get("");
+        String s = currentRelativePath.toAbsolutePath().toString();
+        File file = new File(s+"/src/sample/data/datos.txt");
 
-        FileOutputStream fout =new FileOutputStream("C:\\Users\\nicky\\Desktop\\output.txt");
-        ObjectOutputStream out= new ObjectOutputStream(fout);
-        out.writeObject(datos);
-        out.close();
+        LocalDate localDate = LocalDate.now();
+        String date = localDate.toString();
+        String stateOfTheDay = "D";
 
-        //Muestra los datos en consola
-//        FileInputStream fin = new FileInputStream("C:\\Users\\nicky\\Desktop\\output.txt");
-//        ObjectInputStream ois = new ObjectInputStream(fin);
-//        ArrayList<Datos> datos2 = (ArrayList<Datos>)ois.readObject();
-//        for(Datos employee : datos2) System.out.println(employee);
+        if (!file.exists()) {
+            System.out.println("Fichero creado");
+            FileWriter fw;
+            PrintWriter pw;
+            try {
+                fw = new FileWriter(file);
+                pw = new PrintWriter(fw);
+                pw.println(new Datos(date, stateOfTheDay, P1.getText(), P2.getText(), choiceBox.getValue()));
+                fw.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } else {
+            System.out.println("Datos añadidos");
+            FileWriter fw;
+            PrintWriter pw;
+            try {
+                fw = new FileWriter(file, true);
+                pw = new PrintWriter(fw);
+                pw.println(new Datos(date, stateOfTheDay, P1.getText(), P2.getText(), choiceBox.getValue()));
+                fw.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }
