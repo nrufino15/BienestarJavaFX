@@ -19,4 +19,14 @@ public class HomeController {
         window.setScene(viewScene);
         window.show();
     }
+
+    public void changeScreenHomePageToViewDataPage(ActionEvent event) throws IOException {
+        Parent viewParent = FXMLLoader.load(getClass().getResource("/sample/FXML/ViewDataPage.fxml"));
+        Scene viewScene = new Scene(viewParent);
+
+        Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
+
+        window.setScene(viewScene);
+        window.show();
+    }
 }
