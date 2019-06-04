@@ -15,13 +15,16 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDate;
 
 
-public class    InputMorningController {
+public class InputNightController {
     @FXML private ImageView E1, E2, E3, E4, E5, F1, F2, F3, F4, F5;
     @FXML private Label P1, P2;
     @FXML private ChoiceBox<String> choiceBox;
@@ -137,7 +140,7 @@ public class    InputMorningController {
         });
     }
 
-    public void changeScreenInputMorningPageToSelectInputPage(ActionEvent event) throws IOException {
+    public void changeScreenInputNightPageToSelectInputPage(ActionEvent event) throws IOException {
         Parent viewParent = FXMLLoader.load(getClass().getResource("/sample/FXML/SelectInputPage.fxml"));
         Scene viewScene = new Scene(viewParent);
 
@@ -154,7 +157,7 @@ public class    InputMorningController {
 
         LocalDate localDate = LocalDate.now();
         String date = localDate.toString();
-        String stateOfTheDay = "M";
+        String stateOfTheDay = "N";
 
         if (!file.exists()) {
             System.out.println("Fichero creado");

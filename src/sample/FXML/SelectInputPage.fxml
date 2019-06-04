@@ -7,7 +7,7 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.SelectInputController">
    <children>
       <Button layoutX="261.0" layoutY="198.0" mnemonicParsing="false" onAction="#changeScreenSelectInputPageToInputMorningPage" text="Introducir datos mañana" />
-      <Button layoutX="268.0" layoutY="250.0" mnemonicParsing="false" text="Introducir datos noche" />
+      <Button layoutX="268.0" layoutY="250.0" mnemonicParsing="false" onAction="#changeScreenSelectInputPageToInputNightPage" text="Introducir datos noche" />
       <Label layoutX="232.0" layoutY="33.0" text="Selecciona que datos quieres introducir" />
       <Button layoutX="73.0" layoutY="29.0" mnemonicParsing="false" onAction="#changeScreenSelectInputPageToHomePage" text="Atras" />
    </children>

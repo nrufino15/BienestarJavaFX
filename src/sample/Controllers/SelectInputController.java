@@ -30,4 +30,14 @@ public class SelectInputController {
         window.setScene(viewScene);
         window.show();
     }
+
+    public void changeScreenSelectInputPageToInputNightPage(ActionEvent event) throws IOException {
+        Parent viewParent = FXMLLoader.load(getClass().getResource("/sample/FXML/InputNightPage.fxml"));
+        Scene viewScene = new Scene(viewParent);
+
+        Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
+
+        window.setScene(viewScene);
+        window.show();
+    }
 }
