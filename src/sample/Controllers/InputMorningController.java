@@ -21,7 +21,7 @@ import java.nio.file.Paths;
 import java.time.LocalDate;
 
 
-public class    InputMorningController {
+public class InputMorningController {
     @FXML private ImageView E1, E2, E3, E4, E5, F1, F2, F3, F4, F5;
     @FXML private Label P1, P2;
     @FXML private ChoiceBox<String> choiceBox;

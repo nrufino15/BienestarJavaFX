@@ -1,14 +1,15 @@
 package sample.Controllers;
 
-import com.sun.org.apache.xerces.internal.impl.io.UTF8Reader;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
+import java.awt.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -18,11 +19,7 @@ import java.util.Scanner;
 
 public class ViewDataController {
 
-
-    @FXML
-    public void initialize(){
-
-    }
+    @FXML private Label E1;
 
     public void changeScreenViewDataPageToHomePage(ActionEvent event) throws IOException {
         Parent viewParent = FXMLLoader.load(getClass().getResource("/sample/FXML/HomePage.fxml"));
@@ -47,7 +44,7 @@ public class ViewDataController {
             System.out.println(fileContents.toString());
             String doc = fileContents.toString();
 
-            System.out.println(doc.charAt(0));
+            E1.setText(doc);
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();

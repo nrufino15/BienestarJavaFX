@@ -6,8 +6,8 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.ViewDataController">
    <children>
-      <Label fx:id="text" layoutX="336.0" layoutY="242.0" text="Label" />
+      <Label fx:id="E1" layoutX="88.0" layoutY="96.0" />
       <Button layoutX="73.0" layoutY="29.0" mnemonicParsing="false" onAction="#changeScreenViewDataPageToHomePage" text="Atras" />
-      <Button layoutX="324.0" layoutY="403.0" mnemonicParsing="false" onAction="#reedFile" text="Button" />
+      <Button layoutX="306.0" layoutY="403.0" mnemonicParsing="false" onAction="#reedFile" text="Mostrar texto" />
    </children>
 </AnchorPane>
